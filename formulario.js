@@ -6,14 +6,14 @@ botonBorrar.id = "boton-borrar";
 */
 var corteLinea = document.createElement("br");
 document.body.appendChild(corteLinea);
-document.body.appendChild(botonBorrar);
+//document.body.appendChild(botonBorrar);
 formulario.onsubmit = function (e) {
   e.preventDefault();
   var n = formulario.elements[0];
-  var e = formulario.elements[1];
+  var ed= formulario.elements[1];
   var na = formulario.elements[2];
   var nombre = n.value;
-  var edad = e.value;
+  var edad = ed.value;
   var i = na.selectedIndex;
   var nacionalidad = na.options[i].value;
   console.log(nombre, edad);
@@ -22,7 +22,7 @@ formulario.onsubmit = function (e) {
     n.classList.add("error");
   }
   if (edad < 18 || edad > 120) {
-    e.classList.add("error");
+    ed.classList.add("error");
   }
   if (nombre.length > 0 && edad > 18 && edad < 120) {
     agregarInvitado(nombre, edad, nacionalidad);
